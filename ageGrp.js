@@ -4,9 +4,8 @@ const mongoose = require('mongoose')
 const schema = {
     id: {type: Number, required: true},
     name: {type: String, required: true},//kids, junior, adults...
-    minAge: {type: Number, required: true},
-    maxAge: {type: Number, required: true},
     comment: String,
+    players: Number,
     //embbeded document
     games: [{
         id: Number,
@@ -16,6 +15,9 @@ const schema = {
 }
 
 const ageGrp_schema = new mongoose.Schema(schema)
-const AgeGrp = mongoose.model('AgeGrp', ageGrp_schema)
+const AgeGrp = mongoose.model('Agegroup', ageGrp_schema)
 
-module.exports = AgeGrp
+module.exports = {
+    AgeGrp,
+    Games
+}
