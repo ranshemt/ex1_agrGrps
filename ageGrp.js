@@ -17,7 +17,4 @@ const schema = {
 const ageGrp_schema = new mongoose.Schema(schema)
 const AgeGrp = mongoose.model('Agegroup', ageGrp_schema)
 
-module.exports = {
-    AgeGrp,
-    Games
-}
+module.exports = AgeGrp
