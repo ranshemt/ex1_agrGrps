@@ -46,7 +46,7 @@ module.exports = {
         .connect(url, options)
         .then(async() => {
             const {id = null} = req.params
-            const {players = -1} = req.body
+            const {players = null} = req.body
 
             const result = await AgeGrp.updateOne({id}, {players})
             if(result) res.json(result);
