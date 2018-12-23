@@ -11,7 +11,7 @@ app.get('/ageGroups', ctrl.getAllGroups)
 app.get('/findGame/:id', ctrl.findGame)
 app.post('/setPlayers/:id', ctrl.setPlayersForGrp)
 app.get('/findByGameAndPlayers/:id&:players', ctrl.grpsGamePlayers)
-
+//
 app.listen(port,
     () => console.log('Express server ready for requests on port: '), port
 )
