@@ -20,11 +20,8 @@ module.exports = {
         mongoose
         .connect(url, options)
         .then(async() => {
-            const result = await AgeGrp.find({}).populate('games')
-            .exec((err, games) => {
-                console.log("Populated Group " + games);
-            })
-
+            const result = await AgeGrp.find({})
+            
             if(result) res.json(result)
             else res.status(404).send('not found')
         })
