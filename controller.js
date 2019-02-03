@@ -12,12 +12,8 @@ const options = {
     user: DB_USER,
     pass: DB_PASS
 }
-//
-//methods
-module.exports = {
-    //get
-    getAllGroups(req, res, next){
-        mongoose
+var getAllGroups_method = function(req, res, next){
+    mongoose
         .connect(url, options)
         .then(async() => {
             const result = await AgeGrp.find({})
@@ -25,7 +21,13 @@ module.exports = {
             if(result) res.json(result)
             else res.status(404).send('not found')
         })
-    },
+}
+
+//
+//methods
+module.exports = {
+    //get
+    getAllGroups: getAllGroups_method,
     //get/id
     findGame(req, res, next){
         mongoose
